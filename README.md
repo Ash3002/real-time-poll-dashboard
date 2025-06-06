@@ -1,107 +1,87 @@
 # Real-Time Poll Dashboard
 
-A full-stack polling application built with Next.js, Firebase, Tailwind CSS, Recharts, and Framer Motion. Users can create polls with dynamic options, share a poll code, have participants join and vote in real time, and see live results.
+A full-stack polling application built with Next.js, Firebase, Tailwind CSS, Recharts, and Framer Motion.
 
 ## Features
 
-- **Authentication** (Firebase Auth)
-  - Register with Email/Password
-  - Login with Email/Password
-  - Protected routes for admin and voting
-- **Admin Interface**
-  - Create a poll with question, dynamic options, and duration
-  - Real-time dashboard showing vote counts with a Pie Chart
-  - Countdown timer auto-closes poll when duration ends
-  - Manual "Close Poll" button
-- **Audience / Voting Interface**
-  - Join a poll using a unique Poll Code (Firestore document ID)
-  - Cast a vote (one vote per user) on live poll
-  - See immediate live-updating chart after voting
-  - If poll closed, see final results
-- **Responsive Design** (Tailwind CSS)
-  - Mobile and desktop layouts
-  - Light/Dark mode
-- **Animations** (Framer Motion)
-  - Smooth transitions for chart updates and button interactions
-- **Charts** (Recharts)
-  - Pie Chart to visualize vote distribution
-- **Deployment** on Vercel
+- User authentication
+- Admin interface for creating polls
+- Voting interface for participants
+- Real-time updates
+- Responsive design
+- Beautiful animations
+- Deployed on Vercel
 
 ## Tech Stack
 
-- **Next.js** (TypeScript)
-- **Firebase** (Firestore, Auth)
-- **Tailwind CSS** (utility-first styling)
-- **Recharts** (React charts)
-- **Framer Motion** (animations)
-- **Vercel** (hosting)
+- Next.js (TypeScript)
+- Firebase (Firestore, Auth)
+- Tailwind CSS
+- Recharts
+- Framer Motion
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (v14 or higher)
+- npm (comes with Node.js)
+- Git
 
 ## Getting Started
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/real-time-poll-dashboard.git
-   cd real-time-poll-dashboard
-   ```
+1. Clone the repository:
+```bash
+git clone https://github.com/Ash3002/real-time-poll-dashboard.git
+cd real-time-poll-dashboard
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+2. Install dependencies:
+```bash
+npm install
+```
 
-3. **Set up environment variables**
-   Create a `.env.local` file in the root directory with your Firebase configuration:
-   ```
-   NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-   NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-   ```
+3. Create a Firebase project:
+   - Go to [Firebase Console](https://console.firebase.google.com/)
+   - Create a new project
+   - Enable Authentication (Email/Password)
+   - Create a Firestore database
+   - Get your Firebase configuration
 
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+4. Create a `.env.local` file in the root directory with your Firebase configuration:
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+```
 
-5. **Open [http://localhost:3000](http://localhost:3000) in your browser**
+5. Run the development server:
+```bash
+npm run dev
+```
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
 ## Project Structure
 
 ```
-real-time-poll-dashboard/
-├── src/
-│   ├── app/                    # Next.js 13+ app directory
-│   │   ├── admin/             # Admin routes
-│   │   │   ├── create/        # Create poll page
-│   │   │   └── [pollId]/      # Admin poll dashboard
-│   │   ├── poll/              # Voting routes
-│   │   │   └── [pollId]/      # Voting page
-│   │   ├── login/             # Login page
-│   │   ├── register/          # Register page
-│   │   └── page.tsx           # Landing page
-│   ├── components/            # Reusable components
-│   │   ├── Loading.tsx
-│   │   ├── Navigation.tsx
-│   │   ├── OptionButtons.tsx
-│   │   ├── PollResults.tsx
-│   │   └── ProtectedRoute.tsx
-│   ├── context/              # React Context providers
-│   │   ├── AuthContext.tsx
-│   │   └── ToastContext.tsx
-│   └── lib/                  # Utility functions and Firebase setup
-│       ├── firebase.ts
-│       └── pollHelpers.ts
-├── public/                   # Static files
-├── .env.local               # Environment variables (not in git)
-├── .gitignore
-├── next.config.js
-├── package.json
-├── README.md
-├── tailwind.config.js
-└── tsconfig.json
+src/
+├── app/              # Next.js app directory
+├── components/       # React components
+├── context/         # Context providers
+├── lib/             # Utility functions
+└── types/           # TypeScript type definitions
 ```
+
+## Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build the application for production
+- `npm start` - Start the production server
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
 
 ## Contributing
 
