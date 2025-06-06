@@ -1,5 +1,7 @@
 # Real-Time Poll Dashboard
 
+[![Run Locally](https://img.shields.io/badge/Run-Locally-blue?style=for-the-badge&logo=github)](https://github.com/Ash3002/real-time-poll-dashboard#getting-started)
+
 A full-stack polling application built with Next.js, Firebase, Tailwind CSS, Recharts, and Framer Motion.
 
 ## Features
